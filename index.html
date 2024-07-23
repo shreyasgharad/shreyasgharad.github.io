@@ -3,69 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Website</title>
+    <title>Zenax Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Our Services</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#clients">Our Clients</a></li>
-                <li><a href="#testimonials">Client Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Zenax Studio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section id="about">
-        <h2>About Us</h2>
-        <p>We are a team of passionate professionals dedicated to delivering top-notch services to our clients.</p>
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to Zenax Studio. We are a creative agency dedicated to delivering top-notch services.</p>
+        </div>
     </section>
 
     <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Web Development</li>
-            <li>Graphic Design</li>
-            <li>Digital Marketing</li>
-        </ul>
+        <div class="container">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Web Development</li>
+                <li>Graphic Design</li>
+                <li>Digital Marketing</li>
+                <li>Photography</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <p>Check out some of our latest projects.</p>
+        </div>
     </section>
 
     <section id="team">
-        <h2>Team</h2>
-        <p>Meet our amazing team of experts who make everything possible.</p>
-    </section>
-
-    <section id="clients">
-        <h2>Our Clients</h2>
-        <p>We have worked with numerous clients from various industries.</p>
-    </section>
-
-    <section id="testimonials">
-        <h2>Client Testimonials</h2>
-        <p>"This company is amazing! They delivered everything on time and exceeded our expectations." - Happy Client</p>
-        <p>"Highly professional and great quality work. We will definitely work with them again." - Satisfied Client</p>
+        <div class="container">
+            <h2>Our Team</h2>
+            <p>Meet the amazing team behind Zenax Studio.</p>
+        </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="https://formspree.io/f/xdknazbn" method="POST">
+                <label>
+                    Your email:
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    Your message:
+                    <textarea name="message"></textarea>
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Portfolio Website. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Zenax Studio. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
