@@ -1,1 +1,0 @@
-tuzya aicha gho
