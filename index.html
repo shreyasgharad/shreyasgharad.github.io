@@ -41,7 +41,7 @@
 
     // Fetching reviews from Google Spreadsheet
     async function fetchReview() {
-      const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
+      const url = `https://sheets.googleapis.com/v4/spreadsheets/${1vGca4fYkQJePpQz4PPHMawpHhulfJkaqX4THFA9AkWs/edit?gid=0#gid=0}/values/${SAMPLE_REVIEW}?key=${AIzaSyBXjVg6a-7vV9Y0qZ5Oig1lwENP3vTl6M4}`;
       const response = await fetch(url);
       const data = await response.json();
       const rows = data.values;
