@@ -12,10 +12,6 @@
     }
     .review-container {
       margin: 20px 0;
-      padding: 20px;
-      background-color: white;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     button {
       padding: 10px 15px;
@@ -24,7 +20,6 @@
       border: none;
       cursor: pointer;
       font-size: 16px;
-      border-radius: 5px;
     }
     button:active {
       background-color: #45a049;
@@ -40,45 +35,35 @@
 
   <script>
     // Google Sheets ID and API Key
-    const SPREADSHEET_ID = '1vGca4fYkQJePpQz4PPHMawpHhulfJkaqX4THFA9AkWs';
-    const API_KEY = 'AIzaSyBXjVg6a-7vV9Y0qZ5Oig1lwENP3vTl6M4';
-    const SHEET_NAME = 'Sheet1'; // Default sheet name unless you've renamed it
+    const SPREADSHEET_ID = '1vGca4fYkQJePpQz4PPHMawpHhulfJkaqX4THFA9AkWs'; // Your Spreadsheet ID
+    const API_KEY = 'AIzaSyBXjVg6a-7vV9Y0qZ5Oig1lwENP3vTl6M4'; // Your API Key
+    const SHEET_NAME = 'Sheet1'; // Replace if the sheet name is different
 
     // Fetching reviews from Google Spreadsheet
     async function fetchReview() {
       const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        if (data.values && data.values.length > 1) {
-          const rows = data.values;
-          
-          // Pick a random review from the sheet (assuming reviews are in the second column)
-          const randomReview = rows[Math.floor(Math.random() * rows.length)][1];
-          document.getElementById('review-text').innerText = randomReview;
+      const response = await fetch(url);
+      const data = await response.json();
+      const rows = data.values;
 
-          return randomReview;
-        } else {
-          document.getElementById('review-text').innerText = "No reviews available.";
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        document.getElementById('review-text').innerText = "Error loading review.";
-      }
+      // Pick a random review (you can also implement other logic)
+      const randomReview = rows[Math.floor(Math.random() * rows.length)][1];
+
+      document.getElementById('review-text').innerText = randomReview;
+      return randomReview;
     }
 
-    // Copy review text to clipboard and redirect to the Google Review page
+    // Copy review text to clipboard and redirect to Google Review page
     async function copyAndRedirect() {
       const reviewText = document.getElementById('review-text').innerText;
-      
-      // Copy text to clipboard
+
+      // Copy the text to the clipboard
       try {
         await navigator.clipboard.writeText(reviewText);
-        alert("Review copied to clipboard!");
+        alert("Review copied!");
 
         // Redirect to the shop's Google Review page
-        const googleReviewLink = 'https://g.page/YOUR_SHOP_REVIEW_LINK/review'; // Replace with your shop's Google review link
+        const googleReviewLink = 'https://www.google.com/search?q=oral+pearl+dental+clinic&rlimm=10287420102315104333'; 
         window.location.href = googleReviewLink;
       } catch (err) {
         alert("Failed to copy review!");
