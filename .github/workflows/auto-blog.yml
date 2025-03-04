@@ -1,0 +1,32 @@
+name: Auto Blog Posting
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Runs every day at 8 AM
+
+jobs:
+  update-blog:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: pip install requests openai
+
+    - name: Run Blog Script
+      run: python blog_automation.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.email "youremail@gmail.com"
+        git config --global user.name "YourName"
+        git add .
+        git commit -m "Auto Blog Update"
+        git push
